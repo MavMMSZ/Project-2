@@ -46,6 +46,9 @@ As a user, I want to create or join book clubs where members can recommend books
 
 As a user, I want to access ReadersDigress easily on my mobile device to explore books and recommendations anytime.
 
+### Acceptance Criteria:
+
+
 ## Table of Contents
 
 - [Installation](#installation)
