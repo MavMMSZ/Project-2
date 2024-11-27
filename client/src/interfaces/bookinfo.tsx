@@ -2,12 +2,13 @@
 interface BookInfo {
     id: number;
     title: string;
-    book_cover: string;
-    length: number;
     author: string;
+    publisher: string;
     genre: string;
-    rating: number;
-    description: string;
+    decription?: string;
+    cover: string;
+    rating?: number;
+    reviews?: string[];
 }
 
 export default BookInfo;
