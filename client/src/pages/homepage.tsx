@@ -7,9 +7,6 @@
 
 import Carousel from "../components/carosel";
 
-
-
-
 const Homepage = () => {
   return (
     <div>
