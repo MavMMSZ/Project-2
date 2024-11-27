@@ -6,8 +6,8 @@ import './index.css'
 
 import App from './App.tsx'
 import Homepage from './pages/homepage.tsx'
-import Readlist from './pages/readlist.tsx'
-import Wantlist from './pages/wantList.tsx'
+import Readlist from './pages/readpage.tsx'
+import Wantlist from './pages/wantpage.tsx'
 import ErrorPage from './pages/errorpage.tsx'
 
 const router = createBrowserRouter([
