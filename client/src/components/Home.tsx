@@ -11,19 +11,22 @@ interface Book {
 }
 
 const BooksList: React.FC = () => {
-  const [books, setBooks] = useState<Book[]>([]);
-  const [categories] = useState<string[]>([
+  const [books, setBooks] = useState<Book[]>([]); // Stores the list of books
+  const [categories, setCategories] = useState<string[]>([
     'Fiction', 'Non-fiction', 'Science', 'History', 'Mystery', 'Fantasy'
   ]);
-  const [selectedCategory, setSelectedCategory] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>(''); // Current selected category
+  const [loading, setLoading] = useState<boolean>(false); // Loading state for API requests
+  const [startIndex, setStartIndex] = useState<number>(0); // Tracks the start index for pagination
 
   // Function to fetch books from Google Books API
-  const fetchBooks = async (category: string = '') => {
+  const fetchBooks = async (category: string = '', startIndex: number = 0) => {
     setLoading(true);
     try {
       const categoryQuery = category ? `+subject:${category}` : '';
-      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:${categoryQuery}&maxResults=10`);
+      const response = await axios.get(
+        `https://www.googleapis.com/books/v1/volumes?q=subject:${categoryQuery}&startIndex=${startIndex}&maxResults=10`
+      );
       const booksData = response.data.items.map((item: any) => ({
         title: item.volumeInfo.title,
         authors: item.volumeInfo.authors || ['Unknown'],
@@ -32,7 +35,7 @@ const BooksList: React.FC = () => {
         imageUrl: item.volumeInfo.imageLinks?.thumbnail || '',
         category: item.volumeInfo.categories?.[0] || 'Uncategorized',
       }));
-      setBooks(booksData);
+      setBooks(prevBooks => [...prevBooks, ...booksData]); // Append new books to the existing list
     } catch (error) {
       console.error('Error fetching books', error);
     }
@@ -41,15 +44,15 @@ const BooksList: React.FC = () => {
 
   // Fetch books when component is mounted or category changes
   useEffect(() => {
-    fetchBooks(selectedCategory);
+    setStartIndex(0); // Reset to the first set of books
+    setBooks([]); // Clear the current list of books before fetching new ones
+    fetchBooks(selectedCategory, 0);
   }, [selectedCategory]);
 
-  // Function to save books to local storage
-  const saveToLocalStorage = (book: Book, list: 'wishlist' | 'readlist') => {
-    const storedBooks = JSON.parse(localStorage.getItem(list) || '[]');
-    storedBooks.push(book);
-    localStorage.setItem(list, JSON.stringify(storedBooks));
-    alert(`${book.title} has been added to your ${list}.`);
+  // Function to handle the "Load More" button click
+  const loadMoreBooks = () => {
+    setStartIndex(prevStartIndex => prevStartIndex + 10); // Increment the start index by 10
+    fetchBooks(selectedCategory, startIndex + 10); // Fetch the next 10 books
   };
 
   return (
@@ -90,14 +93,17 @@ const BooksList: React.FC = () => {
                   <p><strong>Publisher:</strong> {book.publisher}</p>
                   <p><strong>Description:</strong> {book.description}</p>
                   <p><strong>Category:</strong> {book.category}</p>
-
-                  {/* Buttons to save to wishlist and readlist */}
-                  <button onClick={() => saveToLocalStorage(book, 'wishlist')}>Add to Wishlist</button>
-                  <button onClick={() => saveToLocalStorage(book, 'readlist')}>Add to Readlist</button>
                 </div>
               </li>
             ))}
           </ul>
+        )}
+      </div>
+
+      {/* Load More button */}
+      <div>
+        {!loading && books.length > 0 && (
+          <button onClick={loadMoreBooks}>Load More</button>
         )}
       </div>
     </div>
