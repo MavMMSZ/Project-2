@@ -12,7 +12,7 @@ interface Book {
 
 const BooksList: React.FC = () => {
   const [books, setBooks] = useState<Book[]>([]); // Stores the list of books
-  const [categories, setCategories] = useState<string[]>([
+  const [categories] = useState<string[]>([
     'Fiction', 'Non-fiction', 'Science', 'History', 'Mystery', 'Fantasy'
   ]);
   const [selectedCategory, setSelectedCategory] = useState<string>(''); // Current selected category
