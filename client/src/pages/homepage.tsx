@@ -1,14 +1,4 @@
-// import React from "react";
-// import { useState, useEffect, MouseEventHandler } from "react";
-// import { Link } from "react-router-dom";
-// import { WorkData } from "../interfaces/WorkData";
-// import { deleteWork, retrieveWorks } from "../api/workAPI";
-
-
-import Carousel from "../components/carosel";
-
-
-
+import BooksList from "../components/Home";
 
 const Homepage = () => {
   return (
@@ -16,7 +6,7 @@ const Homepage = () => {
       <h1>
         Welcome to the homepage
       </h1>
-      <Carousel />
+      <BooksList />
     </div>
   );
 };
