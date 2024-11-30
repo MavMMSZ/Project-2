@@ -12,13 +12,13 @@ interface Book {
 const WishlistPage: React.FC = () => {
   const [wishlist, setWishlist] = useState<Book[]>([]);
 
-  // Function to load books from the readlist in localStorage
+  // Function to load books from the wishlist in localStorage
   const loadWishlistFromLocalStorage = () => {
     const savedWishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
     setWishlist(savedWishlist);
   };
 
-  // Function to remove a book from the readlist
+  // Function to remove a book from the wishlist
   const removeFromWishlist = (bookToRemove: Book) => {
     const updatedWishlist = wishlist.filter(book => book.title !== bookToRemove.title);
     localStorage.setItem('wishlist', JSON.stringify(updatedWishlist)); // Update localStorage
@@ -32,11 +32,11 @@ const WishlistPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Your Readlist</h1>
+      <h1>Your Wishlist</h1>
 
-      {/* If readlist is empty */}
+      {/* If wishlist is empty */}
       {wishlist.length === 0 ? (
-        <p>Your readlist is empty. Add some books to the readlist first!</p>
+        <p>Your wishlist is empty. Add some books to the wishlist first!</p>
       ) : (
         <ul>
           {wishlist.map((book, index) => (
