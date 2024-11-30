@@ -18,6 +18,7 @@ const BooksList: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [startIndex, setStartIndex] = useState<number>(0);
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null); // Track the selected book for description toggle
 
   // Function to fetch books from Google Books API
   const fetchBooks = async (category: string = '', index: number = 0) => {
@@ -72,6 +73,16 @@ const BooksList: React.FC = () => {
     fetchBooks(selectedCategory, startIndex + 10); // Fetch next set of books based on updated startIndex
   };
 
+  // Toggle description visibility for the selected book
+  const toggleDescription = (book: Book) => {
+    // If the clicked book is already selected, hide its description
+    if (selectedBook?.title === book.title) {
+      setSelectedBook(null);
+    } else {
+      setSelectedBook(book); // Show the clicked book's description
+    }
+  };
+
   return (
     <div>
       <h1>Random Books</h1>
@@ -108,8 +119,17 @@ const BooksList: React.FC = () => {
                   <h2>{book.title}</h2>
                   <p><strong>Authors:</strong> {book.authors.join(', ')}</p>
                   <p><strong>Publisher:</strong> {book.publisher}</p>
-                  <p><strong>Description:</strong> {book.description}</p>
                   <p><strong>Category:</strong> {book.category}</p>
+
+                  {/* Toggle Description */}
+                  <button onClick={() => toggleDescription(book)}>
+                    {selectedBook?.title === book.title ? 'Hide Description' : 'Show Description'}
+                  </button>
+
+                  {/* Show the description if the book is selected */}
+                  {selectedBook?.title === book.title && (
+                    <p><strong>Description:</strong> {book.description}</p>
+                  )}
 
                   {/* Buttons to save to wishlist and readlist */}
                   <button onClick={() => saveToLocalStorage(book, 'wishlist')}>Add to Wishlist</button>
