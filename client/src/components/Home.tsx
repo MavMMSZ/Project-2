@@ -20,11 +20,20 @@ const BooksList: React.FC = () => {
   const [startIndex, setStartIndex] = useState<number>(0);
 
   // Function to fetch books from Google Books API
-  const fetchBooks = async (category: string = '') => {
+  const fetchBooks = async (category: string = '', index: number = 0) => {
     setLoading(true);
     try {
       const categoryQuery = category ? `+subject:${category}` : '';
-      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:${categoryQuery}&startIndex=${startIndex}&maxResults=10`);
+      const response = await axios.get(
+        `https://www.googleapis.com/books/v1/volumes?q=subject:${categoryQuery}&startIndex=${index}&maxResults=10`
+      );
+
+      if (!response.data.items) {
+        alert("No books found for this category.");
+        setLoading(false);
+        return;
+      }
+
       const booksData = response.data.items.map((item: any) => ({
         title: item.volumeInfo.title,
         authors: item.volumeInfo.authors || ['Unknown'],
@@ -33,18 +42,20 @@ const BooksList: React.FC = () => {
         imageUrl: item.volumeInfo.imageLinks?.thumbnail || '',
         category: item.volumeInfo.categories?.[0] || 'Uncategorized',
       }));
+
       setBooks(prevBooks => [...prevBooks, ...booksData]); // Append new books to existing list
     } catch (error) {
       console.error('Error fetching books', error);
+      alert('Something went wrong. Please try again later.');
     }
     setLoading(false);
   };
 
   // Fetch books when component is mounted or category changes
   useEffect(() => {
-    setStartIndex(0); //resets to first set
-    setBooks([]); //clears the list
-    fetchBooks(selectedCategory);
+    setStartIndex(0); // Reset to first set of books
+    setBooks([]); // Clear the list of books
+    fetchBooks(selectedCategory, 0); // Fetch first set of books for the selected category
   }, [selectedCategory]);
 
   // Function to save books to local storage
@@ -55,9 +66,10 @@ const BooksList: React.FC = () => {
     alert(`${book.title} has been added to your ${list}.`);
   };
 
+  // Load more books
   const loadMoreBooks = () => {
-    setStartIndex(prevStartIndex => prevStartIndex + 10); //increment by 10
-    fetchBooks(selectedCategory); //fetch next set
+    setStartIndex(prevStartIndex => prevStartIndex + 10); // Increment startIndex by 10
+    fetchBooks(selectedCategory, startIndex + 10); // Fetch next set of books based on updated startIndex
   };
 
   return (
@@ -108,13 +120,13 @@ const BooksList: React.FC = () => {
           </ul>
         )}
       </div>
-        
-        {/* Load more button */}
-        <div>
-          {!loading && books.length > 0 && (
-            <button onClick={loadMoreBooks}>Load More</button>
-          )}
-          </div>
+
+      {/* Load more button */}
+      <div>
+        {!loading && books.length > 0 && (
+          <button onClick={loadMoreBooks}>Load More</button>
+        )}
+      </div>
     </div>
   );
 };
