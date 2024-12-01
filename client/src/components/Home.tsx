@@ -84,7 +84,7 @@ const BooksList: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className='book-container' >
       <h1>Random Books</h1>
 
       {/* Genre filter */}
@@ -111,11 +111,11 @@ const BooksList: React.FC = () => {
         {books.length === 0 ? (
           <p>No books available. Please try again later.</p>
         ) : (
-          <ul>
+          <ul className='book-list'>
             {books.map((book, index) => (
-              <li key={index}>
-                <div>
-                  <img src={book.imageUrl} alt={book.title} width={80} />
+              <li  key={index}>
+                <div className='book-item book-actions'>
+                  <img src={book.imageUrl} alt={book.title} width={150} />
                   <h2>{book.title}</h2>
                   <p><strong>Authors:</strong> {book.authors.join(', ')}</p>
                   <p><strong>Publisher:</strong> {book.publisher}</p>

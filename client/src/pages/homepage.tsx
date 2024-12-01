@@ -1,5 +1,5 @@
 import BooksList from "../components/Home";
-
+import '../styles/homepage.css';
 const Homepage = () => {
   return (
     <div>
