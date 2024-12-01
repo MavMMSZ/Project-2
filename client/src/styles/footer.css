@@ -1,0 +1,8 @@
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--footer-bg, #333);
+    color: var(--footer-text, white);
+    font-family: inherit;
+    font-size: 0.9em;
+}
