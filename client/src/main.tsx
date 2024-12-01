@@ -7,6 +7,7 @@ import App from './App.tsx'
 import Homepage from './pages/homepage.tsx'
 import Readlist from './pages/readpage.tsx'
 import Wantlist from './pages/wantpage.tsx'
+import Login from './pages/loginpage.tsx'
 import ErrorPage from './pages/errorpage.tsx'
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         path: '/wantlist',
         element: <Wantlist />,
       },
+      {
+        path: '/login',
+        element: <Login />,
+      }
     ],
   },
 ]);

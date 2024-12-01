@@ -7,6 +7,7 @@ export default function Snav() {
             <Link to="/">Home</Link>
             <Link to="/readlist">Read List</Link>
             <Link to="/wantlist">Want to Read</Link>
+            <Link to="/Login">Login</Link>
         </div>
     )
 }
