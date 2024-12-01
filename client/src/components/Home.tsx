@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 interface Book {
   title: string;
   authors: string[];
@@ -83,10 +84,12 @@ const BooksList: React.FC = () => {
     }
   };
 
-  return (
-    <div className='book-container' >
-      <h1>Random Books</h1>
 
+  return (
+    
+    <div >
+      <h2>Choose Random Books</h2>
+     
       {/* Genre filter */}
       <div>
         <label>Choose a genre: </label>
@@ -107,14 +110,14 @@ const BooksList: React.FC = () => {
       {loading && <p>Loading...</p>}
 
       {/* Book list */}
-      <div>
-        {books.length === 0 ? (
-          <p>No books available. Please try again later.</p>
-        ) : (
+      {books.length === 0 ? (
+        <p>No books available. Please try again later.</p>
+      ) : (
+
           <ul className='book-list'>
             {books.map((book, index) => (
-              <li  key={index}>
-                <div className='book-item book-actions'>
+              <li key={index}>
+                <div>
                   <img src={book.imageUrl} alt={book.title} width={150} />
                   <h2>{book.title}</h2>
                   <p><strong>Authors:</strong> {book.authors.join(', ')}</p>
@@ -138,8 +141,8 @@ const BooksList: React.FC = () => {
               </li>
             ))}
           </ul>
-        )}
-      </div>
+        
+      )}
 
       {/* Load more button */}
       <div>
@@ -148,7 +151,7 @@ const BooksList: React.FC = () => {
         )}
       </div>
     </div>
-  );
+  )
 };
 
 export default BooksList;

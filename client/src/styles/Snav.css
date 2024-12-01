@@ -5,7 +5,7 @@
     --box-shadow-color: rgba(0, 0, 0, 0.1);
     --sidenav-bg: #333; /* Modified */
     --sidenav-text: #fff; /* Modified */
-    --link-color: #646cff; /* Modified */
+    --link-color: #3f8769; /* Modified */
     --link-hover-bg: #007bff; /* Modified */
     --link-hover-color: #fff; /* Modified */
     --footer-text: #aaa; /* Modified */
@@ -43,7 +43,7 @@
 
 
 
-.sidenav Link {
+.sidenav-links a {
     color: var(--link-color, #646cff);
     text-decoration: none;
     padding: 0.5rem;
@@ -56,13 +56,4 @@
     color: var(--link-hover-color, #fff);
 }
 
-.sidenav-footer {
-    position: absolute;
-    bottom: 1rem;
-    width: 100%;
-    font-size: 0.9em;
-    text-align: center;
-    border-top: 1px solid var(--border-color, #333);
-    padding-top: 0.5rem;
-    color: var(--footer-text, #aaa);
-}
+
