@@ -1,5 +1,6 @@
 footer {
     text-align: center;
+    display: flex;
     padding: 1rem;
     background-color: var(--footer-bg, #333);
     color: var(--footer-text, white);

@@ -14,7 +14,9 @@ export default function Snav() {
             <li>
                 <Link to="/wantlist">Want to Read</Link>
             </li>
-            
+            <li>
+              <Link to="/Login">Login</Link>
+          </li>
         </ul>
         </div>
     )
