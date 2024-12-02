@@ -1,8 +1,32 @@
+/* :root {
+    --primary-color: #2171c1;
+    --secondary-color: #ddd;
+    --background-color: #f7f3f3;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+.book-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--background-color);
+    max-height: 100vh-;
+}
 .book-list {
-    display: grid;
+    display: inline-grid;
+    align-items: start;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     padding: 1rem;
+
 }
 
 .book-item {
@@ -10,18 +34,29 @@
     border-radius: 8px;
     padding: 1rem;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.book-item h2 {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    line-clamp: 2; 
+}
 .book-item img {
     max-width: 100%;
     border-radius: 4px;
 }
 
+
 .book-actions button {
     margin: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -29,6 +64,33 @@
 }
 
 .book-actions button:hover {
-    background-color: #007bff;
+    background-color: #196cbf;
     color: white;
 }
+
+h1 {
+    text-align: center;
+    margin: 1rem;
+}
+
+h2 {
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.2rem;
+}
+
+
+
+@media (max-width: 1024px) {
+    .book-item {
+        flex: 1 1 calc(50% - 1.5rem);
+        max-width: calc(50% - 1.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .book-item {
+        flex: 1 1 calc(100% - 1.5rem);
+        max-width: calc(100% - 1.5rem);
+    }
+} */
