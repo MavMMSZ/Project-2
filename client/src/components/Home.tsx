@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 interface Book {
   title: string;
   authors: string[];
@@ -83,10 +84,12 @@ const BooksList: React.FC = () => {
     }
   };
 
-  return (
-    <div>
-      <h1>Random Books</h1>
 
+  return (
+    
+    <div className = 'book-container'>
+      <h2>Choose Random Books</h2>
+     
       {/* Genre filter */}
       <div>
         <label>Choose a genre: </label>
@@ -107,39 +110,50 @@ const BooksList: React.FC = () => {
       {loading && <p>Loading...</p>}
 
       {/* Book list */}
-      <div>
-        {books.length === 0 ? (
-          <p>No books available. Please try again later.</p>
-        ) : (
-          <ul>
-            {books.map((book, index) => (
-              <li key={index}>
-                <div>
-                  <img src={book.imageUrl} alt={book.title} width={80} />
-                  <h2>{book.title}</h2>
-                  <p><strong>Authors:</strong> {book.authors.join(', ')}</p>
-                  <p><strong>Publisher:</strong> {book.publisher}</p>
-                  <p><strong>Category:</strong> {book.category}</p>
+      {books.length === 0 ? (
+        <p>No books available. Please try again later.</p>
+      ) : (
 
+          <ul className='container py-4'>
+            {books.map((book, index) => (
+              <li className='column g-3' key={index}>
+                <div className="card h-100 shadow-sm">
+                  <img 
+                  src={book.imageUrl} 
+                  alt={book.title} 
+                  className="card-img-top img-fluid" 
+                  style={{ height: "200px", objectFit: "none" }}/>
+                <div className="card-body d-flex flex-column">
+                      <h2 className='card-tile'>{book.title}
+                      </h2>
+
+                      <p><strong>Authors:</strong> {book.authors.join(', ')}</p>
+                      <p><strong>Publisher:</strong> {book.publisher}</p>
+                      <p><strong>Category:</strong> {book.category}</p>
+                </div>
+                  
                   {/* Toggle Description */}
-                  <button onClick={() => toggleDescription(book)}>
-                    {selectedBook?.title === book.title ? 'Hide Description' : 'Show Description'}
-                  </button>
+                  
 
                   {/* Show the description if the book is selected */}
                   {selectedBook?.title === book.title && (
                     <p><strong>Description:</strong> {book.description}</p>
                   )}
-
+                <div className="mt-auto">
+                <button className="btn btn btn-secondary me-2 mb-2" onClick={() => toggleDescription(book)}>
+                    {selectedBook?.title === book.title ? 'Hide Description' : 'Show Description'}
+                  </button>
+                <button className="btn btn-secondary me-2 mb-2 btn" onClick={() => saveToLocalStorage(book, 'wishlist')}>Add to Wishlist</button>
+                <button className="btn btn-secondary mb-2 " onClick={() => saveToLocalStorage(book, 'readlist')}>Add to Readlist</button>
+                </div>
                   {/* Buttons to save to wishlist and readlist */}
-                  <button onClick={() => saveToLocalStorage(book, 'wishlist')}>Add to Wishlist</button>
-                  <button onClick={() => saveToLocalStorage(book, 'readlist')}>Add to Readlist</button>
+                  
                 </div>
               </li>
             ))}
           </ul>
-        )}
-      </div>
+        
+      )}
 
       {/* Load more button */}
       <div>
@@ -148,7 +162,7 @@ const BooksList: React.FC = () => {
         )}
       </div>
     </div>
-  );
+  )
 };
 
 export default BooksList;

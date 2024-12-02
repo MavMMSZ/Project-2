@@ -12,7 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+* {
+  box-sizing: border-box;
+  margin: auto;
+  padding: 5px;
+} 
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,13 +26,13 @@ a:hover {
   color: #535bf2;
 }
 
-body {
+/* body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
+} */
 
 h1 {
   font-size: 3.2em;
@@ -54,7 +58,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -65,4 +69,31 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 5fr));
+  /* /* max-width: 800px; */
+  margin: 0 auto;
+  padding: 1.5em; 
+  gap: 1.5em;}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.4em;
+  }
 }
+
+/* Large screens (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.6em;
+  }}

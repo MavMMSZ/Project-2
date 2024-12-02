@@ -1,13 +1,28 @@
+:root {
+    --primary-color: #92abc4;
+    --secondary-color: #ddd;
+    --background-color: #f7f3f3;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --sidenav-bg: #333; /* Modified */
+    --sidenav-text: #fff; /* Modified */
+    --link-color: #3f8769; /* Modified */
+    --link-hover-bg: #007bff; /* Modified */
+    --link-hover-color: #fff; /* Modified */
+    --footer-text: #aaa; /* Modified */
+    --border-color: #bea9a9; /* Modified */
+}
+
 .sidenav {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
-    width: 250px;
-    background-color: var(--sidenav-bg, #222);
+    width: 100px;
+    background-color: transparent; /* Modified */
     color: var(--sidenav-text, #fff);
     padding: 1rem;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1;
     overflow-y: auto;
     transition: transform 0.3s ease-in-out;
     transform: translateX(0); /* Open by default */
@@ -17,20 +32,16 @@
     transform: translateX(-100%); /* Hidden state */
 }
 
-.sidenav-header {
-    font-size: 1.5em;
+.sidenav ul {
+    font-size: 1.0em;
     font-weight: bold;
     margin-bottom: 1rem;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color, #333);
+    /* text-align: center; */
+    border-bottom: 0px solid var(--border-color, #3139cc);
     padding-bottom: 0.5rem;
 }
 
-.sidenav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+
 
 .sidenav-links a {
     color: var(--link-color, #646cff);
@@ -45,13 +56,4 @@
     color: var(--link-hover-color, #fff);
 }
 
-.sidenav-footer {
-    position: absolute;
-    bottom: 1rem;
-    width: 100%;
-    font-size: 0.9em;
-    text-align: center;
-    border-top: 1px solid var(--border-color, #333);
-    padding-top: 0.5rem;
-    color: var(--footer-text, #aaa);
-}
+
