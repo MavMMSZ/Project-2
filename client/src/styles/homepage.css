@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --primary-color: #2171c1;
     --secondary-color: #ddd;
     --background-color: #f7f3f3;
@@ -21,10 +21,9 @@
     max-height: 100vh-;
 }
 .book-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items:flex-start;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: inline-grid;
+    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     padding: 1rem;
 
@@ -94,4 +93,4 @@ h2 {
         flex: 1 1 calc(100% - 1.5rem);
         max-width: calc(100% - 1.5rem);
     }
-}
+} */
