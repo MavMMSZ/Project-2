@@ -87,17 +87,18 @@ const BooksList: React.FC = () => {
 
   return (
     
-    <div className = 'book-container'>
-      <h2>Choose Random Books</h2>
+    <div >
+      <h2 className='random'>Choose Random Books</h2>
+      
      
       {/* Genre filter */}
       <div>
-        <label>Choose a genre: </label>
-        <select
+        <label className = 'label'>Choose a genre: </label>
+        <select className='options'
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
-          <option value="">All Genres</option>
+          <option  value="">All Genres</option>
           {categories.map((category, index) => (
             <option key={index} value={category}>
               {category}
@@ -158,7 +159,7 @@ const BooksList: React.FC = () => {
       {/* Load more button */}
       <div>
         {!loading && books.length > 0 && (
-          <button onClick={loadMoreBooks}>Load More</button>
+          <button className='btn btn btn-secondary me-2 mb-2' onClick={loadMoreBooks}>Load More</button>
         )}
       </div>
     </div>

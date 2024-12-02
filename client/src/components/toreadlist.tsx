@@ -32,25 +32,28 @@ const ReadlistPage: React.FC = () => {
 
   return (
     <div>
-      <h1>Your Readlist</h1>
+     
 
       {/* If readlist is empty */}
       {readlist.length === 0 ? (
         <p>Your readlist is empty. Add some books to the readlist first!</p>
       ) : (
-        <ul>
+        <ul className='container py-4'>
           {readlist.map((book, index) => (
-            <li key={index}>
-              <div>
-                <img src={book.imageUrl} alt={book.title} width={80} />
-                <h2>{book.title}</h2>
+            <li className='column g-3' key={index}>
+              <div className="card h-100 shadow-sm">
+                <img src={book.imageUrl} alt={book.title} className="card-img-top img-fluid" style={{ height: "200px", objectFit: "none" }} width={80} />
+            <div className="card-body d-flex flex-column"> 
+                <h2 >{book.title}</h2>
                 <p><strong>Authors:</strong> {book.authors.join(', ')}</p>
                 <p><strong>Publisher:</strong> {book.publisher}</p>
                 <p><strong>Description:</strong> {book.description}</p>
                 <p><strong>Category:</strong> {book.category}</p>
+            </div>
+                
 
                 {/* Remove button */}
-                <button onClick={() => removeFromReadlist(book)}>Remove from Readlist</button>
+                <button className="btn btn btn-secondary me-2 mb-2" onClick={() => removeFromReadlist(book)}>Remove from Readlist</button>
               </div>
             </li>
           ))}
