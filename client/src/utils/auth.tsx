@@ -45,6 +45,12 @@ class AuthService {
     localStorage.removeItem('id_token');
     window.location.assign('/login');
   }
+  Signup(idToken: string) {
+    // set the token to localStorage
+    // redirect to the home page
+    localStorage.setItem('id_token', idToken);
+    window.location.assign('/');
+  }
 }
 
 export default new AuthService();
