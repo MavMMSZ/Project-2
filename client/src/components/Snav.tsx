@@ -3,7 +3,7 @@ import '../styles/Snav.css';
 //this is the nav for those logged into the app
 export default function Snav() {
     return (
-        <div className='sidenav'>
+        <div className='sidenav1'>
         <ul >
             <li>
                 <Link to="/">Home</Link>

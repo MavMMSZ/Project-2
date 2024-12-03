@@ -16,6 +16,7 @@
   box-sizing: border-box;
   margin: auto;
   padding: 5px;
+  color: #070b63;
 } 
 a {
   font-weight: 500;
@@ -107,3 +108,16 @@ button:hover {
   
   border-bottom: 3px solid #a5a6ba;
 }
+
+.all{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+
+  align-items: center;
+  margin-top: auto;
+  font-size: 2em;
+  color: rgb(15, 34, 90);
+  
+  border-bottom: 3px solid #a5a6ba;
+} 

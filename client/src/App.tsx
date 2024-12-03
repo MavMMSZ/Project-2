@@ -13,15 +13,20 @@ import Snav from './components/Snav'
 function App() {
   
   return (
-    <div className="App">
-      <Header />
+    
+  <div>
+    <div className='all'> 
       <Snav />
+      <Header />
       <Navbar />
-      <main>
-      <Outlet />
-      </main>
-      <Footer />
-    </div>
+       <main>
+           <Outlet />
+       </main></div>
+       
+      <div>
+        <Footer />
+      </div>
+  </div>
   )
 }
 
