@@ -28,6 +28,12 @@ export default function Snav() {
                         <Link onClick={AuthService.logout} to="/Logout">Logout</Link>
                     </li>
                 }
+                {AuthService.loggedIn() === false ?
+                    <li>
+                        <Link to="/Signup">Signup</Link>
+                    </li>
+                    : ""
+                }
             </ul>
         </div>
     )

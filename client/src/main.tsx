@@ -11,6 +11,7 @@ import Homepage from './pages/homepage.tsx'
 import Readlist from './pages/readpage.tsx'
 import Wantlist from './pages/wantpage.tsx'
 import Login from './pages/loginpage.tsx'
+import Signup from './pages/newUserPage.tsx'
 import ErrorPage from './pages/errorpage.tsx'
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/signup',
+        element: <Signup />,
       }
     ],
   },
