@@ -30,7 +30,7 @@ export default function Snav() {
                 }
                 {AuthService.loggedIn() === false ?
                     <li>
-                        <Link to="/Signup">Signup</Link>
+                        <Link to="/Signup">Register</Link>
                     </li>
                     : ""
                 }
