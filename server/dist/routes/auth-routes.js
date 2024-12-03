@@ -25,6 +25,8 @@ export const login = async (req, res) => {
     const token = jwt.sign({ username }, secretKey, { expiresIn: '1h' });
     return res.json({ token }); // Send the token as a JSON response
 };
+// export const Signup = async (req: request, res: response) => {
+// const {username, password } = req.body;
 // Create a new router instance
 const router = Router();
 // POST /login - Login a user
