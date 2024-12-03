@@ -115,17 +115,16 @@ const BooksList: React.FC = () => {
         <p>No books available. Please try again later.</p>
       ) : (
 
-          <ul className='container py-4'>
+          <ul className='book-container'>
             {books.map((book, index) => (
-              <li className='column g-3' key={index}>
-                <div className="card h-100 shadow-sm">
+              <li className=' book-list' key={index}>
+                <div className="book-item">
                   <img 
                   src={book.imageUrl} 
                   alt={book.title} 
-                  className="card-img-top img-fluid" 
-                  style={{ height: "200px", objectFit: "none" }}/>
-                <div className="card-body d-flex flex-column">
-                      <h2 className='card-tile'>{book.title}
+                  />
+                <div >
+                      <h2 >{book.title}
                       </h2>
 
                       <p><strong>Authors:</strong> {book.authors.join(', ')}</p>
@@ -140,12 +139,12 @@ const BooksList: React.FC = () => {
                   {selectedBook?.title === book.title && (
                     <p><strong>Description:</strong> {book.description}</p>
                   )}
-                <div className="mt-auto">
-                <button className="btn btn btn-secondary me-2 mb-2" onClick={() => toggleDescription(book)}>
+                <div className='book-actions '>
+                <button className='button' onClick={() => toggleDescription(book)}>
                     {selectedBook?.title === book.title ? 'Hide Description' : 'Show Description'}
                   </button>
-                <button className="btn btn-secondary me-2 mb-2 btn" onClick={() => saveToLocalStorage(book, 'wishlist')}>Add to Wishlist</button>
-                <button className="btn btn-secondary mb-2 " onClick={() => saveToLocalStorage(book, 'readlist')}>Add to Readlist</button>
+                <button  onClick={() => saveToLocalStorage(book, 'wishlist')}>Add to Wishlist</button>
+                <button  onClick={() => saveToLocalStorage(book, 'readlist')}>Add to Readlist</button>
                 </div>
                   {/* Buttons to save to wishlist and readlist */}
                   
@@ -159,7 +158,7 @@ const BooksList: React.FC = () => {
       {/* Load more button */}
       <div>
         {!loading && books.length > 0 && (
-          <button className='btn btn btn-secondary me-2 mb-2' onClick={loadMoreBooks}>Load More</button>
+          <button className='' onClick={loadMoreBooks}>Load More</button>
         )}
       </div>
     </div>

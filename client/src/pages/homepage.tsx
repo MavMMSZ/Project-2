@@ -1,12 +1,12 @@
 import BooksList from "../components/Home";
 import '../styles/homepage.css';
-import '../styles/carousel.css';
+
 
 const Homepage = () => {
   
 
   return (
-    <div>
+    <div >
       <h1>Welcome To the Home of Your Favorite Books</h1>
       
       <BooksList />

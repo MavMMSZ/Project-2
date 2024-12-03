@@ -1,4 +1,5 @@
-/* :root {
+
+:root {
     --primary-color: #2171c1;
     --secondary-color: #ddd;
     --background-color: #f7f3f3;
@@ -8,29 +9,30 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: var(--secondary-color);
+  
     
     
 }
 .book-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    background-color: var(--background-color);
-    max-height: 100vh-;
-}
-.book-list {
-    display: inline-grid;
-    align-items: start;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
     padding: 1rem;
-
+    margin: 1rem;
+    border: 5px solid #603939;
 }
 
+
 .book-item {
-    border: 1px solid #ddd;
+    max-width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    align-content: center;
+    border: 1px solid #6a1e1e;
+    gap: 1rem;
     border-radius: 8px;
     padding: 1rem;
     text-align: center;
@@ -51,20 +53,28 @@
 .book-item img {
     max-width: 100%;
     border-radius: 4px;
+    justify-content: center;
 }
 
 
 .book-actions button {
     margin: 0.5rem;
     padding: 0.5rem 0.5rem;
-    border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    border: none;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
 }
 
 .book-actions button:hover {
-    background-color: #196cbf;
+    background-color: var(--primary-color);
     color: white;
 }
 
@@ -73,10 +83,17 @@ h1 {
     margin: 1rem;
 }
 
-h2 {
-    text-align: center;
+h2  {
+    text-align:start;
     margin: 1rem;
     font-size: 1.2rem;
+    border: 5px solid #ddd;
+}
+
+p {
+    margin: none;
+    font-size: 1rem;
+    border: 5px solid #ddd;
 }
 
 
@@ -93,4 +110,4 @@ h2 {
         flex: 1 1 calc(100% - 1.5rem);
         max-width: calc(100% - 1.5rem);
     }
-} */
+}

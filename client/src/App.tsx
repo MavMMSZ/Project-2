@@ -15,17 +15,18 @@ function App() {
   return (
     
   <div>
-    <div className='all'> 
-      <Snav />
-      <Header />
-      <Navbar />
-       <main>
-           <Outlet />
-       </main></div>
-       
-      <div>
-        <Footer />
-      </div>
+    <div >
+        <Snav />
+        <Navbar/>
+      <main>
+          <Header />
+          <Outlet />
+      </main>
+    </div>
+
+    <div>
+      <Footer />
+    </div>
   </div>
   )
 }
