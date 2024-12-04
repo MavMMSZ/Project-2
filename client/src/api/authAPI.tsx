@@ -21,9 +21,6 @@ const login = async (userInfo: UserLogin) => {
   }
 }
 
-
-
-
 const Signup = async (userInfo: UserSignup) => {
   try {
     // Send a POST request to '/auth/login' with user login information in JSON format
