@@ -115,15 +115,15 @@ const BooksList: React.FC = () => {
         <p>No books available. Please try again later.</p>
       ) : (
 
-          <ul className='book-container'>
+          <ul className='books-container'>
             {books.map((book, index) => (
-              <li className=' book-list' key={index}>
-                <div className="book-item">
+              <li className=' book-card random-card' key={index}>
+                <div className='book-item'>
                   <img 
                   src={book.imageUrl} 
                   alt={book.title} 
                   />
-                <div >
+                <div className='book-info'>
                       <h2 >{book.title}
                       </h2>
 
@@ -139,7 +139,7 @@ const BooksList: React.FC = () => {
                   {selectedBook?.title === book.title && (
                     <p><strong>Description:</strong> {book.description}</p>
                   )}
-                <div className='book-actions '>
+                <div className='book-actions'>
                 <button className='button' onClick={() => toggleDescription(book)}>
                     {selectedBook?.title === book.title ? 'Hide Description' : 'Show Description'}
                   </button>
