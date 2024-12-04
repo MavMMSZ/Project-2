@@ -11,6 +11,7 @@ class AuthService {
   loggedIn() {
     // return a value that indicates if the user is logged in
     const token = this.getToken();
+    console.log("token", token);
     return !!token && !this.isTokenExpired(token);
   }
   
