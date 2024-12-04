@@ -27,10 +27,11 @@ const login = async (userInfo: UserLogin) => {
 
 
 
+
 const Signup = async (userInfo: UserSignup) => {
   try {
     // Send a POST request to '/auth/login' with user login information in JSON format
-    const response = await fetch('/auth/Signup', {
+    const response = await fetch('/auth/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -46,7 +47,7 @@ const Signup = async (userInfo: UserSignup) => {
     const data = await response.json();
     return data;  // Return the data received from the server
   } catch (err) {
-    console.log('Error from user Signup: ', err);  // Log any errors that occur during fetch
+    console.log('Error from user signup: ', err);  // Log any errors that occur during fetch
     return Promise.reject('Could not fetch user info');  // Return a rejected promise with an error message
   }
 }
