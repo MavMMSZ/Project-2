@@ -40,7 +40,7 @@ export const Signup = async (req, res) => {
     const secretKey = process.env.JWT_SECRET_KEY || 'secret';
     const token = jwt.sign({ username: newUser.username }, secretKey, { expiresIn: '1h' });
     // Send a success response
-    return res.status(201).json({ message: "User created successfully", token });
+    return res.json({ token });
     ;
 };
 // Create a new router instance

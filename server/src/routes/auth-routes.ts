@@ -51,8 +51,7 @@ export const Signup = async (req: Request, res: Response) => {
   const token = jwt.sign({ username: newUser.username }, secretKey, { expiresIn: '1h' });
 
   // Send a success response
-  return res.status(201).json({ message: "User created successfully", token });
-  ;
+  return res.json({ token });  ;
 };
 
 
