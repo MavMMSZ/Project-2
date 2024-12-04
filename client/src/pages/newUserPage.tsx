@@ -17,8 +17,21 @@ const SignupPage = () => {
     });
   };
 
+  const validateInputs = () => {
+    if (!signupData.username || !signupData.password) {
+      alert('Please fill in all fields.');
+      return false;
+    }
+    if (signupData.password.length < 6) {
+      alert('Password must be at least 6 characters long.');
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (!validateInputs()) return
     try {
       const data = await Signup(signupData);
       Auth.Signup(data.token);

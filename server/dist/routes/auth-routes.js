@@ -25,10 +25,28 @@ export const login = async (req, res) => {
     const token = jwt.sign({ username }, secretKey, { expiresIn: '1h' });
     return res.json({ token }); // Send the token as a JSON response
 };
-// export const Signup = async (req: request, res: response) => {
-// const {username, password } = req.body;
+export const Signup = async (req, res) => {
+    const { username, password } = req.body;
+    // Check if username already exists
+    const existingUser = await User.findOne({ where: { username } });
+    if (existingUser) {
+        return res.status(409).json({ message: "Username already exists" });
+    }
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
+    // Create a new user
+    const newUser = await User.create({ username, password: hashedPassword });
+    // Generate a token
+    const secretKey = process.env.JWT_SECRET_KEY || 'secret';
+    const token = jwt.sign({ username: newUser.username }, secretKey, { expiresIn: '1h' });
+    // Send a success response
+    return res.status(201).json({ message: "User created successfully", token });
+    ;
+};
 // Create a new router instance
 const router = Router();
+// Add the Signup route
+router.post('/signup', Signup);
 // POST /login - Login a user
 router.post('/login', login); // Define the login route
 export default router; // Export the router instance
