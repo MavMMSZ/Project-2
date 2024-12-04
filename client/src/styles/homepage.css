@@ -1,41 +1,54 @@
-/* :root {
+
+:root {
     --primary-color: #2171c1;
     --secondary-color: #ddd;
     --background-color: #f7f3f3;
     --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: #f0eaea; /* Modified */
 }
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: var(--secondary-color);
+  
     
     
 }
-.book-container {
+
+.books-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.book-card {
+    width: 400px;
+    padding: 1rem 1rem;
+    border-radius: 4px;
+    border: 2px solid var(--border-color);
+    /* border: 1px solid var(--border-color); */
+    box-shadow: 0 0 10px var(--box-shadow-color);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    background-color: var(--background-color);
-    max-height: 100vh-;
-}
-.book-list {
-    display: inline-grid;
-    align-items: start;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-
+    justify-content: space-between;
+    
+    
 }
 
 .book-item {
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    margin: 1rem;
     padding: 1rem;
-    text-align: center;
-    background-color: var(--background-color);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    box-shadow: 0 1 10px var(--box-shadow-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary-color);
+    /* gap: 1rem; */
+    
 }
 
 .book-item h2 {
@@ -49,22 +62,47 @@
     line-clamp: 2; 
 }
 .book-item img {
-    max-width: 100%;
+    width: 200px;
+    height: 300px;
     border-radius: 4px;
+    object-fit: cover;
+    margin: 0 auto;
+    justify-content: center;
+    
 }
-
+.book-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    
+    background-color: var(--secondary-color);
+}
 
 .book-actions button {
     margin: 0.5rem;
     padding: 0.5rem 0.5rem;
-    border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    border: none;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: white;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
 }
 
 .book-actions button:hover {
-    background-color: #196cbf;
+    background-color: var(--primary-color);
     color: white;
 }
 
@@ -73,10 +111,17 @@ h1 {
     margin: 1rem;
 }
 
-h2 {
-    text-align: center;
+h2  {
+    text-align:start;
     margin: 1rem;
     font-size: 1.2rem;
+    border: 5px solid #ddd;
+}
+
+p {
+    margin: none;
+    font-size: 1rem;
+    border: 5px solid #ddd;
 }
 
 
@@ -93,4 +138,4 @@ h2 {
         flex: 1 1 calc(100% - 1.5rem);
         max-width: calc(100% - 1.5rem);
     }
-} */
+}
