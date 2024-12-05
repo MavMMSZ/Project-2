@@ -6,7 +6,7 @@ const Homepage = () => {
   
 
   return (
-    <div >
+    <div className="welcome">
       <h1>Welcome To the Home of Your Favorite Books</h1>
       
       <BooksList/>

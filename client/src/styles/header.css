@@ -1,10 +1,9 @@
 
-header {
-    text-align: start;
-    padding: 1rem;
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 1.5rem;
+header h1 {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 80px;
     font-weight: bold;
-    box-shadow: 0 2px 4px var(--box-shadow-color, rgba(0, 0, 0, 0.1));
-}
+    margin: 0;
+    color: #5f57f3; /* Accent color for the title */
+    padding-bottom:20px ; 
+  }
