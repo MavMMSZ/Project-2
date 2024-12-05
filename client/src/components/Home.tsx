@@ -88,17 +88,15 @@ const BooksList: React.FC = () => {
   return (
     
     <div >
-      <h2 className='random'>Choose Random Books</h2>
-      
      
       {/* Genre filter */}
-      <div>
-        <label className = 'label'>Choose a genre: </label>
+      <div className = 'label'>
+        <label >Choose a genre to display random books: </label>
         <select className='options'
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
-          <option  value="">All Genres</option>
+          <option  value="" >All Genres</option>
           {categories.map((category, index) => (
             <option key={index} value={category}>
               {category}
@@ -116,6 +114,7 @@ const BooksList: React.FC = () => {
       ) : (
 
           <ul className='books-container'>
+            
             {books.map((book, index) => (
               <li className=' book-card random-card' key={index}>
                 <div className='book-item'>
@@ -140,11 +139,11 @@ const BooksList: React.FC = () => {
                     <p><strong>Description:</strong> {book.description}</p>
                   )}
                 <div className='book-actions'>
-                <button className='button' onClick={() => toggleDescription(book)}>
+                <button className='book-action' onClick={() => toggleDescription(book)}>
                     {selectedBook?.title === book.title ? 'Hide Description' : 'Show Description'}
                   </button>
-                <button  onClick={() => saveToLocalStorage(book, 'wishlist')}>Add to Wishlist</button>
-                <button  onClick={() => saveToLocalStorage(book, 'readlist')}>Add to Readlist</button>
+                <button className='book-action' onClick={() => saveToLocalStorage(book, 'wishlist')}>Add to Wishlist</button>
+                <button className='book-action' onClick={() => saveToLocalStorage(book, 'readlist')}>Add to Readlist</button>
                 </div>
                   {/* Buttons to save to wishlist and readlist */}
                   
@@ -156,9 +155,9 @@ const BooksList: React.FC = () => {
       )}
 
       {/* Load more button */}
-      <div>
+      <div className='load'>
         {!loading && books.length > 0 && (
-          <button className='' onClick={loadMoreBooks}>Load More</button>
+          <button className='loadmore' onClick={loadMoreBooks}>Load More Books</button>
         )}
       </div>
     </div>

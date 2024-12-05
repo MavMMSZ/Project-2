@@ -3,7 +3,7 @@ import '../styles/footer.css';
 export default function Footer() {
     return (
         <footer>
-            <p>© 2021 Readers Digress</p>
+            <p>© 2024 Readers Digress &#128218; </p>
         </footer>
     )
 }
