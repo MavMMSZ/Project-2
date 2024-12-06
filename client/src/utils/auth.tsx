@@ -14,7 +14,7 @@ class AuthService {
     console.log("token", token);
     return !!token && !this.isTokenExpired(token);
   }
-  
+
   isTokenExpired(token: string) {
     // return a value that indicates if the token is expired
     try {
@@ -67,5 +67,6 @@ class AuthService {
     return 'Guest'; // If there's no token, return 'Guest'
   }
 }
+
 
 export default new AuthService();
