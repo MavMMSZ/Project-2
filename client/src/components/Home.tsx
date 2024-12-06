@@ -27,7 +27,7 @@ const BooksList: React.FC = () => {
     try {
       const categoryQuery = category ? `+subject:${category}` : '';
       const response = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=subject:${categoryQuery}&startIndex=${index}&maxResults=10`
+        `https://www.googleapis.com/books/v1/volumes?q=subject:${categoryQuery}&startIndex=${index}&maxResults=9`
       );
 
       if (!response.data.items) {

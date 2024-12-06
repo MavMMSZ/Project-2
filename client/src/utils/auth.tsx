@@ -14,7 +14,7 @@ class AuthService {
     console.log("token", token);
     return !!token && !this.isTokenExpired(token);
   }
-  
+
   isTokenExpired(token: string) {
     // return a value that indicates if the token is expired
     try {
@@ -52,6 +52,21 @@ class AuthService {
     localStorage.setItem('id_token', idToken);
     window.location.assign('/');
   }
+  getUser() {
+    const token = this.getToken();
+
+    // If the token exists and is not expired
+    if (token && !this.isTokenExpired(token)) {
+      // Decode the token to extract user information
+      const decodedToken = jwtDecode<JwtPayload & UserData>(token);
+
+      // Assuming the username is part of the decoded token
+      // If your token has a different structure, adjust accordingly
+      return decodedToken.username || 'Guest'; // Return the username or a fallback value
+    }
+    return 'Guest'; // If there's no token, return 'Guest'
+  }
 }
+
 
 export default new AuthService();
