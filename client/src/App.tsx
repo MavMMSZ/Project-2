@@ -7,9 +7,7 @@ import Footer from './components/footer'
 import Snav from './components/Snav'
 
 function App() {
-
   return (
-
     <div>
       <div >
         <Header />
