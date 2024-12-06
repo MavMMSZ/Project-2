@@ -4,6 +4,7 @@ import Auth from '../utils/auth';
 import { Signup } from "../api/authAPI";
 
 const SignupPage = () => {
+  const [error, setError] = useState('');
   const [signupData, setSignupData] = useState({
     username: '',
     password: ''
@@ -31,12 +32,13 @@ const SignupPage = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!validateInputs()) return
+    if (!validateInputs()) 
+      return setError('Please fill in all fields');
     try {
       const data = await Signup(signupData);
       Auth.Signup(data.token);
     } catch (err) {
-      console.error('Failed to Signup', err);
+      setError('Failed to Signup');
     }
   };
 
@@ -59,6 +61,7 @@ const SignupPage = () => {
           onChange={handleChange}
         />
         <button type='submit'>Submit Form</button>
+        {error && <p className="error">{error}</p>}
       </form>
     </div>
     
