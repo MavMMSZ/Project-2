@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import '../styles/Snav.css';
 import AuthService from '../utils/auth';
 
+
 export default function Snav() {
     const user = AuthService.getUser(); 
-
     return (
         <div>
             <ul className='link'>
