@@ -40,7 +40,7 @@ const Snav: React.FC = () => {
                 {/* Conditional render of "Welcome {user}" */}
                 {AuthService.loggedIn() && user && (
                     <li className='welcome-message'>
-                        Welcome, {user}
+                        Welcome, {user}!
                     </li>
                 )}
             </ul>
