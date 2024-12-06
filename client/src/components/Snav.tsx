@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import '../styles/Snav.css';
 import AuthService from '../utils/auth';
-//this is the nav for those logged into the app
+
 export default function Snav() {
+    const user = AuthService.getUser(); 
     return (
         <div >
             <ul className='link'>
@@ -34,6 +35,11 @@ export default function Snav() {
                     </li>
                     : ""
                 }
+                {AuthService.loggedIn() && user && (
+                    <li className='welcome-message'>
+                        Welcome, {user}
+                    </li>
+                )}
             </ul>
         </div>
     )

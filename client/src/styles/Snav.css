@@ -1,36 +1,42 @@
-
 .link {
-    display: flex;
+  display: flex;
   text-decoration: none;
   color: var(--sidenav-text);
-  
+
 }
+
 .button {
-      
-        margin: 5px;
-        padding: 10px 20px;
-        font-size: 1em;
-        
-        font-weight: bold;
-        color: #fff;
-        background: linear-gradient(135deg, #6c63ff, #4826d4);
-        border: none;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-transform: uppercase;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-      
-      .button:hover {
-        background: linear-gradient(135deg, #4826d4, #6c63ff);
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-        transform: translateY(-2px);
-      }
-      
-      .button:active {
-        transform: translateY(1px);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-       
+
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #6c63ff, #4826d4);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #4826d4, #6c63ff);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message {
+  font-size: 1.5em;
+  color: var(--sidenav-text);
+  margin: 20px 0;
+  font-weight: bold;
+}
