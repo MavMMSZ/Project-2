@@ -1,6 +1,10 @@
 .App {
   font-family: Arial, sans-serif;
   padding: 20px;
+  display: flex;
+  flex-direction: column; /* Ensures header, main, and footer stack vertically */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevents unwanted scrollbars */
 }
 
 select {
@@ -34,4 +38,21 @@ h2 {
 
 p {
   margin: 5px 0;
+}
+
+main {
+  flex: 1;
+  margin-left: 250px;
+  margin-top: 80px;
+  padding: 20px;
+  overflow-y: auto; 
+}
+
+body {
+  margin: 0; 
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
 }
