@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
 interface Book {
   title: string;
   authors: string[];
@@ -19,9 +18,8 @@ const BooksList: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [startIndex, setStartIndex] = useState<number>(0);
-  const [selectedBook, setSelectedBook] = useState<Book | null>(null); // Track the selected book for description toggle
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
 
-  // Function to fetch books from Google Books API
   const fetchBooks = async (category: string = '', index: number = 0) => {
     setLoading(true);
     try {
@@ -45,7 +43,7 @@ const BooksList: React.FC = () => {
         category: item.volumeInfo.categories?.[0] || 'Uncategorized',
       }));
 
-      setBooks(prevBooks => [...prevBooks, ...booksData]); // Append new books to existing list
+      setBooks(prevBooks => [...prevBooks, ...booksData]);
     } catch (error) {
       console.error('Error fetching books', error);
       alert('Something went wrong. Please try again later.');
@@ -53,14 +51,12 @@ const BooksList: React.FC = () => {
     setLoading(false);
   };
 
-  // Fetch books when component is mounted or category changes
   useEffect(() => {
-    setStartIndex(0); // Reset to first set of books
-    setBooks([]); // Clear the list of books
-    fetchBooks(selectedCategory, 0); // Fetch first set of books for the selected category
+    setStartIndex(0);
+    setBooks([]);
+    fetchBooks(selectedCategory, 0);
   }, [selectedCategory]);
 
-  // Function to save books to local storage
   const saveToLocalStorage = (book: Book, list: 'wishlist' | 'readlist') => {
     const storedBooks = JSON.parse(localStorage.getItem(list) || '[]');
     storedBooks.push(book);
@@ -68,35 +64,29 @@ const BooksList: React.FC = () => {
     alert(`${book.title} has been added to your ${list}.`);
   };
 
-  // Load more books
   const loadMoreBooks = () => {
-    setStartIndex(prevStartIndex => prevStartIndex + 10); // Increment startIndex by 10
-    fetchBooks(selectedCategory, startIndex + 10); // Fetch next set of books based on updated startIndex
+    setStartIndex(prevStartIndex => prevStartIndex + 10);
+    fetchBooks(selectedCategory, startIndex + 10);
   };
 
-  // Toggle description visibility for the selected book
   const toggleDescription = (book: Book) => {
-    // If the clicked book is already selected, hide its description
     if (selectedBook?.title === book.title) {
       setSelectedBook(null);
     } else {
-      setSelectedBook(book); // Show the clicked book's description
+      setSelectedBook(book);
     }
   };
 
-
   return (
-    
-    <div >
-     
-      {/* Genre filter */}
-      <div className = 'label'>
-        <label >Choose a genre to display random books: </label>
-        <select className='options'
+    <div>
+      <div className="label">
+        <label>Choose a genre to display random books:</label>
+        <select
+          className="options"
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
-          <option  value="" >All Genres</option>
+          <option value="">All Genres</option>
           {categories.map((category, index) => (
             <option key={index} value={category}>
               {category}
@@ -105,63 +95,45 @@ const BooksList: React.FC = () => {
         </select>
       </div>
 
-      {/* Loading spinner */}
       {loading && <p>Loading...</p>}
 
-      {/* Book list */}
       {books.length === 0 ? (
         <p>No books available. Please try again later.</p>
       ) : (
-
-          <ul className='books-container'>
-            
-            {books.map((book, index) => (
-              <li className=' book-card random-card' key={index}>
-                <div className='book-item'>
-                  <img 
-                  src={book.imageUrl} 
-                  alt={book.title} 
-                  />
-                <div className='book-info'>
-                      <h2 >{book.title}
-                      </h2>
-
-                      <p><strong>Authors:</strong> {book.authors.join(', ')}</p>
-                      <p><strong>Publisher:</strong> {book.publisher}</p>
-                      <p><strong>Category:</strong> {book.category}</p>
-                </div>
-                  
-                  {/* Toggle Description */}
-                  
-
-                  {/* Show the description if the book is selected */}
-                  {selectedBook?.title === book.title && (
-                    <p><strong>Description:</strong> {book.description}</p>
-                  )}
-                <div className='book-actions'>
-                <button className='book-action' onClick={() => toggleDescription(book)}>
-                    {selectedBook?.title === book.title ? 'Hide Description' : 'Show Description'}
-                  </button>
-                <button className='book-action' onClick={() => saveToLocalStorage(book, 'wishlist')}>Add to Wishlist</button>
-                <button className='book-action' onClick={() => saveToLocalStorage(book, 'readlist')}>Add to Readlist</button>
-                </div>
-                  {/* Buttons to save to wishlist and readlist */}
-                  
-                </div>
-              </li>
-            ))}
-          </ul>
-        
+        <div className="books-grid">
+          {books.map((book, index) => (
+            <div className="book-card" key={index}>
+              <img src={book.imageUrl} alt={book.title} />
+              <div className="book-info">
+                <h2>{book.title}</h2>
+                <p><strong>Authors:</strong> {book.authors.join(', ')}</p>
+                <p><strong>Publisher:</strong> {book.publisher}</p>
+                <p><strong>Category:</strong> {book.category}</p>
+                {selectedBook?.title === book.title && (
+                  <p><strong>Description:</strong> {book.description}</p>
+                )}
+              </div>
+              <div className="book-actions">
+                <button onClick={() => toggleDescription(book)}>
+                  {selectedBook?.title === book.title ? 'Hide Description' : 'Show Description'}
+                </button>
+                <button onClick={() => saveToLocalStorage(book, 'wishlist')}>Add to Wishlist</button>
+                <button onClick={() => saveToLocalStorage(book, 'readlist')}>Add to Readlist</button>
+              </div>
+            </div>
+          ))}
+        </div>
       )}
 
-      {/* Load more button */}
-      <div className='load'>
+      <div className="load">
         {!loading && books.length > 0 && (
-          <button className='loadmore' onClick={loadMoreBooks}>Load More Books</button>
+          <button className="loadmore" onClick={loadMoreBooks}>
+            Load More Books
+          </button>
         )}
       </div>
     </div>
-  )
+  );
 };
 
 export default BooksList;

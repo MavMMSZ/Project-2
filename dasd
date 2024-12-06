@@ -1,0 +1,253 @@
+[33mcommit 8d6a45bbfea3cc694683ef6f9a8d151a7f7ad0ea[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 6dd71b0 5ed2dbf
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Thu Dec 5 18:48:42 2024 -0500
+
+    Merge pull request #41 from MavMMSZ/superfeature/css
+    
+    Added css to home and login
+
+[33mcommit 5ed2dbf50fedf6320b5c980980fd8f1f87fbc10b[m[33m ([m[1;31morigin/superfeature/css[m[33m)[m
+Author: Edward Ofori <tetraed.llc@gmail.com>
+Date:   Thu Dec 5 18:46:02 2024 -0500
+
+    Added css to home and login
+
+[33mcommit 6dd71b01c65cfb53476955b0a1ac9ea8b2d34998[m
+Merge: deca89c dde53f1
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Tue Dec 3 20:54:35 2024 -0500
+
+    Merge pull request #40 from MavMMSZ/superfeature/css
+    
+    Superfeature/css
+
+[33mcommit dde53f192ca71598c8318b54fa15c0dba007778a[m
+Author: Edward Ofori <tetraed.llc@gmail.com>
+Date:   Tue Dec 3 20:51:21 2024 -0500
+
+    Added css code1
+
+[33mcommit deca89c3ccc01f7ca183b6e16e6f1afa586de164[m
+Merge: 4d3f21c 119a8e2
+Author: stevens38 <141980722+stevens38@users.noreply.github.com>
+Date:   Tue Dec 3 20:46:10 2024 -0500
+
+    Merge pull request #39 from MavMMSZ/sign-up-fixerino
+    
+    signup to login is functioning as intended
+
+[33mcommit 119a8e2b7a21fe30d991b74bb447afae565aab7b[m[33m ([m[1;31morigin/sign-up-fixerino[m[33m, [m[1;32msign-up-fixerino[m[33m)[m
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Tue Dec 3 20:45:34 2024 -0500
+
+    signup to login is functioning as intended
+
+[33mcommit 4cf063150b92e98049bfbfcc92b7d11ec357f570[m
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Tue Dec 3 20:44:22 2024 -0500
+
+    signup to login is functioning as intended
+
+[33mcommit 4d3f21c86d0dfe2c846d48e9995acd78487ac1b4[m
+Merge: ee13ff2 e46afa6
+Author: stevens38 <141980722+stevens38@users.noreply.github.com>
+Date:   Tue Dec 3 19:48:55 2024 -0500
+
+    Merge pull request #38 from MavMMSZ/quickie
+    
+    quick fix with signup
+
+[33mcommit e46afa6f9b4bf4289c4984e92c8e894069b23165[m[33m ([m[1;31morigin/quickie[m[33m, [m[1;32mquickie[m[33m)[m
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Tue Dec 3 19:47:36 2024 -0500
+
+    quick fix with signup
+
+[33mcommit ee13ff224d5e0046c015cf73141a0ee493ae03f4[m
+Merge: 10b7db3 630ce7f
+Author: stevens38 <141980722+stevens38@users.noreply.github.com>
+Date:   Tue Dec 3 19:38:45 2024 -0500
+
+    Merge pull request #37 from MavMMSZ/sign-up
+    
+    sign up is working but logging in with said user wont work
+
+[33mcommit 630ce7f87f3b645f5b384f8885a4c8b5340b9a39[m[33m ([m[1;31morigin/sign-up[m[33m, [m[1;32msign-up[m[33m)[m
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Tue Dec 3 19:37:15 2024 -0500
+
+    sign up is working but logging in with said user wont work
+
+[33mcommit 10b7db34cf7d9ea744fb6afd58fcaef17afc9969[m
+Merge: f34b7ee 30f80c9
+Author: stevens38 <141980722+stevens38@users.noreply.github.com>
+Date:   Tue Dec 3 18:46:20 2024 -0500
+
+    Merge pull request #36 from MavMMSZ/adding-new-page
+    
+    Adding new page
+
+[33mcommit 30f80c984a5402ecf76b8ba1a94c3aee50979465[m[33m ([m[1;31morigin/adding-new-page[m[33m, [m[1;32madding-new-page[m[33m)[m
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Tue Dec 3 18:45:07 2024 -0500
+
+    added buttons
+
+[33mcommit f859aceaa5c520b0bd169ac8847c63406405a6a0[m
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Tue Dec 3 18:44:18 2024 -0500
+
+    added buttons
+
+[33mcommit a16e398979fce3295402526b147a9009275156eb[m
+Merge: e00e9bf f34b7ee
+Author: Edward Ofori <tetraed.llc@gmail.com>
+Date:   Tue Dec 3 18:38:04 2024 -0500
+
+    added code
+
+[33mcommit e00e9bf13ec68c7ea937953ce9539d0549d3271a[m
+Author: Edward Ofori <tetraed.llc@gmail.com>
+Date:   Tue Dec 3 18:36:37 2024 -0500
+
+    Added code
+
+[33mcommit f34b7ee5a4755f5f0886f3b4a59ff0d44420a46b[m
+Merge: 27b649e 0df5a77
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Tue Dec 3 14:57:54 2024 -0500
+
+    Merge pull request #35 from MavMMSZ/user-changes
+    
+    added UI, changed login/ logout button/stated new user login code
+
+[33mcommit 0df5a777bd205cf442fe9cc34ea3d4e1d58905cc[m[33m ([m[1;31morigin/user-changes[m[33m)[m
+Author: JStevens <stevens38@marshall.edu>
+Date:   Tue Dec 3 14:44:01 2024 -0500
+
+    added UI, changed login/ logout button/stated new user login code
+
+[33mcommit 341049175fcff5b059e015830df54a8303c9d930[m
+Merge: 99098e6 27b649e
+Author: Edward Ofori <tetraed.llc@gmail.com>
+Date:   Mon Dec 2 20:42:14 2024 -0500
+
+    Added code
+
+[33mcommit 99098e65b2dd363281851e1feeb6aaead69979f9[m
+Author: Edward Ofori <tetraed.llc@gmail.com>
+Date:   Mon Dec 2 20:41:30 2024 -0500
+
+    Added code
+
+[33mcommit 27b649ef2f5b68f885ede46026bd3255f98b7292[m
+Merge: 13ee595 2031ab7
+Author: stevens38 <141980722+stevens38@users.noreply.github.com>
+Date:   Mon Dec 2 20:21:06 2024 -0500
+
+    Merge pull request #34 from MavMMSZ/fixing-server-side
+    
+    server-side functioning
+
+[33mcommit 2031ab701599c307bad2a93dc3abb4ec156b9e5d[m[33m ([m[1;31morigin/fixing-server-side[m[33m, [m[1;32mfixing-server-side[m[33m)[m
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Mon Dec 2 20:18:33 2024 -0500
+
+    server-side functioning
+
+[33mcommit 13ee5957248a3fde89083fe27f87293abaaaeea3[m
+Merge: b78a23c 8a1b1ce
+Author: stevens38 <141980722+stevens38@users.noreply.github.com>
+Date:   Mon Dec 2 19:28:56 2024 -0500
+
+    Merge pull request #33 from MavMMSZ/server-fixes
+    
+    server runsgit add -A!
+
+[33mcommit 8a1b1cec6de28fdd4809debdaa92afb7a6adf3fb[m[33m ([m[1;31morigin/server-fixes[m[33m, [m[1;32mserver-fixes[m[33m)[m
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Mon Dec 2 19:27:46 2024 -0500
+
+    server runsgit add -A!
+
+[33mcommit b78a23c456262a43e45eb8181ea91bbf124e2d07[m
+Merge: 8a95b60 a8317b2
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Mon Dec 2 19:11:52 2024 -0500
+
+    Merge pull request #32 from MavMMSZ/superfeature/css
+    
+    Superfeature/css
+
+[33mcommit a8317b200bdb754b99bd09e364b1a1369d67ff62[m
+Author: Edward Ofori <tetraed.llc@gmail.com>
+Date:   Mon Dec 2 19:09:51 2024 -0500
+
+    Added Bootstrap
+
+[33mcommit 8d0c5ff74f0b068ee6ba95f04a6139c2de73b47f[m
+Merge: 7137b0a 8a95b60
+Author: Edward Ofori <tetraed.llc@gmail.com>
+Date:   Mon Dec 2 18:44:50 2024 -0500
+
+    Main
+
+[33mcommit 8a95b60d7b184ec9c2d052e1ecabc08c70157b5c[m
+Merge: 3aa8163 8dd78bf
+Author: stevens38 <141980722+stevens38@users.noreply.github.com>
+Date:   Mon Dec 2 17:21:57 2024 -0500
+
+    Merge pull request #30 from MavMMSZ/server-side-trying-my-best
+    
+    more pages but no progress
+
+[33mcommit 3aa81636ee4afc4696d0a4904ef83325699d6901[m
+Merge: 9f12ca1 85ff258
+Author: stevens38 <141980722+stevens38@users.noreply.github.com>
+Date:   Mon Dec 2 17:21:30 2024 -0500
+
+    Merge pull request #31 from MavMMSZ/css-bug-fixed
+    
+    bug fix
+
+[33mcommit 8dd78bf17d5641370b1dc80e1a1a020f826ed525[m[33m ([m[1;31morigin/server-side-trying-my-best[m[33m)[m
+Merge: a21aff0 9f12ca1
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Mon Dec 2 13:41:15 2024 -0500
+
+    Merge branch 'main' into server-side-trying-my-best
+
+[33mcommit 85ff258d9d5c7a682cf63bc59bcb62f7a1d9d5ef[m[33m ([m[1;31morigin/css-bug-fixed[m[33m, [m[1;32mcss-bug-fixed[m[33m)[m
+Author: Maverick S <maverickmmsc@gmail.com>
+Date:   Mon Dec 2 13:38:14 2024 -0500
+
+    bug fix
+
+[33mcommit 7137b0a8c1cf32b52743473a294508d6c2cb8d32[m
+Author: Edward Ofori <tetraed.llc@gmail.com>
+Date:   Mon Dec 2 12:05:11 2024 -0500
+
+    Boostrap & Additiona Stling of all pages
+
+[33mcommit 9f12ca1f16a2b19ce52ae889f14285ee5a931466[m
+Merge: 95bdf01 b6f5700
+Author: stevens38 <141980722+stevens38@users.noreply.github.com>
+Date:   Sun Dec 1 23:47:58 2024 -0500
+
+    Merge pull request #29 from MavMMSZ/superfeature/css
+    
+    Superfeature/css
+
+[33mcommit b6f57000deed2965014cd952d005bee6ac44ef3b[m
+Author: Edward Ofori <tetraed.llc@gmail.com>
+Date:   Sun Dec 1 23:12:46 2024 -0500
+
+    Boostrap
+
+[33mcommit 2987daa34144aa6fd5feef5a7226e284a94d0620[m
+Merge: 0d4c6c7 95bdf01
+Author: Edward Ofori <tetraed.llc@gmail.com>
+Date:   Sun Dec 1 19:08:37 2024 -0500
+
+    Boostrap
