@@ -9,12 +9,6 @@ const Snav: React.FC = () => {
     return (
         <div>
             <ul className='link'>
-                {/* Conditional render of "Welcome {user}" */}
-                {AuthService.loggedIn() && user && (
-                    <li className='welcome-message'>
-                        Welcome, {user}
-                    </li>
-                )}
                 <li>
                     <Link to="/" className='button'>Home</Link>
                 </li>
@@ -43,6 +37,12 @@ const Snav: React.FC = () => {
                     </li> 
                     : ""
                 }
+                {/* Conditional render of "Welcome {user}" */}
+                {AuthService.loggedIn() && user && (
+                    <li className='welcome-message'>
+                        Welcome, {user}
+                    </li>
+                )}
             </ul>
         </div>
     );
