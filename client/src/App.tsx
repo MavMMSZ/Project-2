@@ -8,13 +8,18 @@ import Snav from './components/Snav'
 
 function App() {
   return (
+
     <div>
-      <Header />
-      <Snav />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
+      <div >
+        <Header />
+        <Snav />
+        <main>
+          <Outlet />
+        </main>
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   )
 }

@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
+interface Review {
+  content: string;
+  date: string;
+}
+
 interface Book {
   title: string;
   authors: string[];
@@ -7,15 +12,44 @@ interface Book {
   description: string;
   imageUrl: string;
   category: string;
+  reviews?: Review[];
 }
 
 const ReadlistPage: React.FC = () => {
   const [readlist, setReadlist] = useState<Book[]>([]);
+  const [reviewInput, setReviewInput] = useState<{ [key: string]: string }>({});
 
   // Function to load books from the readlist in localStorage
   const loadReadlistFromLocalStorage = () => {
     const savedReadlist = JSON.parse(localStorage.getItem('readlist') || '[]');
     setReadlist(savedReadlist);
+  };
+
+  const saveReadlistToLocalStorage = (updatedReadlist: Book[]) => {
+    localStorage.setItem('readlist', JSON.stringify(updatedReadlist));
+  };
+
+  const handleAddReview = (bookTitle: string) => {
+    const updatedReadlist = readlist.map((book) => {
+      if (book.title === bookTitle) {
+        const newReview: Review = {
+          content: reviewInput[bookTitle] || '',
+          date: new Date().toISOString(),
+        };
+        return {
+          ...book,
+          reviews: [...(book.reviews || []), newReview],
+        };
+      }
+      return book;
+    });
+    setReadlist(updatedReadlist);
+    saveReadlistToLocalStorage(updatedReadlist);
+    setReviewInput({ ...reviewInput, [bookTitle]: '' }); // Reset input field for this book
+  };
+
+  const handleReviewInputChange = (e: React.ChangeEvent<HTMLInputElement>, bookTitle: string) => {
+    setReviewInput({ ...reviewInput, [bookTitle]: e.target.value });
   };
 
   // Function to remove a book from the readlist
@@ -32,9 +66,6 @@ const ReadlistPage: React.FC = () => {
 
   return (
     <div>
-     
-
-      {/* If readlist is empty */}
       {readlist.length === 0 ? (
         <p>Your readlist is empty. Add some books to the readlist first!</p>
       ) : (
@@ -60,7 +91,7 @@ const ReadlistPage: React.FC = () => {
         </ul>
       )}
     </div>
-  );
+  )
 };
 
 export default ReadlistPage;

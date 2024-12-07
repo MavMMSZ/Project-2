@@ -6,6 +6,7 @@ import '../styles/loginpage.css';
 
 
 const Login = () => {
+  const [error, setError] = useState('');
   const [loginData, setLoginData] = useState({
     username: '',
     password: ''
@@ -21,11 +22,15 @@ const Login = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    try {
-      const data = await login(loginData);
-      Auth.login(data.token);
-    } catch (err) {
-      console.error('Failed to login', err);
+    if (!loginData.username || !loginData.password) {
+      setError('Please fill in all fields');
+    } else {
+      try {
+        const data = await login(loginData);
+        Auth.login(data.token);
+      } catch (err) {
+        setError('Failed to login');
+      }
     }
   };
 
@@ -48,6 +53,7 @@ const Login = () => {
           onChange={handleChange}
         />
         <button type='submit'>Click to login</button>
+        {error && <p className="error">{error}</p>}
       </form>
     </div>
     
