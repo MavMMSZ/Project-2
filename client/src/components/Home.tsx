@@ -120,7 +120,7 @@ const BooksList: React.FC = () => {
                 <div className='book-item'>
                   <img 
                   src={book.imageUrl} 
-                  alt={book.title} 
+                  alt={book.title} style={{ height: "200px", objectFit: "none" }} width={80} 
                   />
                 <div className='book-info'>
                       <h2 >{book.title}
