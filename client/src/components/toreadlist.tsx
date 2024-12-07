@@ -86,7 +86,7 @@ const ReadlistPage: React.FC = () => {
                   <p><strong>Publisher:</strong> {book.publisher}</p>
                   <p><strong>Description:</strong> {book.description}</p>
                   <p><strong>Category:</strong> {book.category}</p>
-                  
+
                   {/* Display existing reviews */}
                   {book.reviews && book.reviews.length > 0 && (
                     <div>
