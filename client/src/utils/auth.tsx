@@ -44,7 +44,7 @@ class AuthService {
     // remove the token from localStorage
     // redirect to the login page
     localStorage.removeItem('id_token');
-    window.location.assign('/login');
+    window.location.assign('/Login');
   }
   Signup(idToken: string) {
     // set the token to localStorage
