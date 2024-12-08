@@ -98,14 +98,16 @@ const BooksList: React.FC = () => {
       {books.length === 0 ? (
         <p>No books available. Please try again later.</p>
       ) : (
-        <ul className='books-container'>
-          {books.map((book, index) => (
-            <li className=' book-card random-card' key={index}>
-              <div className='book-item'>
-                <img
-                  src={book.imageUrl}
-                  alt={book.title}
-                />
+
+          <ul className='books-container'>
+            
+            {books.map((book, index) => (
+              <li className=' book-card random-card' key={index}>
+                <div className='book-item'>
+                  <img 
+                  src={book.imageUrl} 
+                  alt={book.title} style={{ height: "200px", objectFit: "none" }} width={80} 
+                  />
                 <div className='book-info'>
                   <h2 >{book.title}
                   </h2>

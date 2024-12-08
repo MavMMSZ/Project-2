@@ -38,13 +38,13 @@ const WishlistPage: React.FC = () => {
       {wishlist.length === 0 ? (
         <p>Your wishlist is empty. Add some books to the wishlist first!</p>
       ) : (
-        <ul className='container'>
+        <ul className='books-container'>
           {wishlist.map((book, index) => (
-            <li className='column' key={index}>
-            <div>
+            <li className=' book-card random-card' key={index}>
+            <div className='book-item'>
                 <img src={book.imageUrl} alt={book.title}  style={{ height: "200px", objectFit: "none" }} width={80} />
-              <div >
-                <h2 className='card-tile'>{book.title}</h2>
+              <div className='book-info' >
+                <h2>{book.title}</h2>
                 <p><strong>Authors:</strong> {book.authors.join(', ')}</p>
                 <p><strong>Publisher:</strong> {book.publisher}</p>
                 <p><strong>Description:</strong> {book.description}</p>
@@ -53,7 +53,7 @@ const WishlistPage: React.FC = () => {
                 {/* <div className="mt-auto"> */}
                 {/* Remove button */}
                </div> 
-                  <button  onClick={() => removeFromWishlist(book)}>Remove from Wishlist</button>
+                  <button className='book-action' onClick={() => removeFromWishlist(book)}>Remove from Wishlist</button>
                 {/* </div> */}
 
               
