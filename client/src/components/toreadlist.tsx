@@ -80,9 +80,34 @@ const ReadlistPage: React.FC = () => {
                 <p><strong>Publisher:</strong> {book.publisher}</p>
                 <p><strong>Description:</strong> {book.description}</p>
                 <p><strong>Category:</strong> {book.category}</p>
+                {/* Display existing reviews */}                   {book.reviews && book.reviews.length > 0 && (
+                      <div>
+                         <h4>Reviews:</h4>
+                         <ul>
+                          {book.reviews.map((review, reviewIndex) => (
+                            <li key={reviewIndex}>
+                             <p>"{review.content}" - <em>{new Date(review.date).toLocaleString()}</em></p>
+                             </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+  
+                    {/* Review input form */}
+                    <input
+                      type="text"
+                      className="form-control mb-2"
+                      placeholder="Write your review..."
+                      value={reviewInput[book.title] || ''}
+                      onChange={(e) => handleReviewInputChange(e, book.title)}
+                    />
+                     <button
+                      className="btn btn-primary mb-2"
+                      onClick={() => handleAddReview(book.title)}
+                    >
+                       Add Review
+                     </button>
             </div>
-                
-
                 {/* Remove button */}
                 <button className='book-action' onClick={() => removeFromReadlist(book)}>Remove from Readlist</button>
               </div>
@@ -93,5 +118,4 @@ const ReadlistPage: React.FC = () => {
     </div>
   )
 };
-
 export default ReadlistPage;
